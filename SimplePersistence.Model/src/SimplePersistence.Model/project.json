@@ -1,0 +1,30 @@
+﻿{
+  "version": "2.1.0-*",
+  "description": "SimplePersistence.Model Class Library",
+  "authors": [ "João Simões" ],
+  "tags": [ "" ],
+  "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",
+  "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
+
+  "frameworks": {
+    "net45": {
+      "frameworkAssemblies": {
+
+      }
+    },
+    "net40": {
+      "frameworkAssemblies": {
+
+      }
+    },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections": "4.0.11-beta-23516",
+        "System.Linq": "4.0.1-beta-23516",
+        "System.Runtime": "4.0.21-beta-23516",
+        "System.Threading": "4.0.11-beta-23516"
+      }
+    }
+  }
+}
