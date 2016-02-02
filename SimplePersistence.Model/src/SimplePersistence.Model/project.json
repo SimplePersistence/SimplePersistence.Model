@@ -1,29 +1,37 @@
 ﻿{
   "version": "2.1.0-*",
-  "description": "SimplePersistence.Model Class Library",
+  "title": "SimplePersistence.Model",
+  "description": "Library that provides consistente model classes guaranteeing ORM compatibility.",
   "authors": [ "João Simões" ],
-  "tags": [ "" ],
+  "tags": [ "database", "model", "persistence" ],
   "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",
   "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
+  "language": "en-US",
 
   "frameworks": {
-    "net45": {
+    "dotnet": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.0"
+      }
+    },
+    "net20": {
       "frameworkAssemblies": {
-
+        "System": ""
+      }
+    },
+    "net35": {
+      "frameworkAssemblies": {
+        "System": ""
       }
     },
     "net40": {
       "frameworkAssemblies": {
-
+        "System": ""
       }
     },
-    "dotnet5.4": {
-      "dependencies": {
-        "Microsoft.CSharp": "4.0.1-beta-23516",
-        "System.Collections": "4.0.11-beta-23516",
-        "System.Linq": "4.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
-        "System.Threading": "4.0.11-beta-23516"
+    "net45": {
+      "frameworkAssemblies": {
+        "System": ""
       }
     }
   }
