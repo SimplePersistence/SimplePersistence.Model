@@ -35,22 +35,31 @@
     },
     "net20": {
       "frameworkAssemblies": {
-
+        "mscorlib": "",
+        "System": ""
       }
     },
     "net35": {
       "frameworkAssemblies": {
-
+        "mscorlib": "",
+        "System": "",
+        "System.Core": ""
       }
     },
     "net40": {
       "frameworkAssemblies": {
-
+        "Microsoft.CSharp": "",
+        "mscorlib": "",
+        "System": "",
+        "System.Core": ""
       }
     },
     "net45": {
       "frameworkAssemblies": {
-
+        "Microsoft.CSharp": "",
+        "mscorlib": "",
+        "System": "",
+        "System.Core": ""
       }
     }
   }
