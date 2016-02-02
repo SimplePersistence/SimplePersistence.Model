@@ -2,18 +2,16 @@
 {
     using System;
 
-#if !NET20
-
     /// <summary>
     /// Metadata information about the entity creation
     /// </summary>
     /// <typeparam name="TCreatedBy">The identifier or entity type</typeparam>
-    public interface IHaveCreatedMeta<TCreatedBy>
+    public interface IHaveLocalCreatedMeta<TCreatedBy>
     {
         /// <summary>
-        /// The <see cref="DateTimeOffset"/> when it was created
+        /// The <see cref="DateTime"/> when it was created
         /// </summary>
-        DateTimeOffset CreatedOn { get; set; }
+        DateTime CreatedOn { get; set; }
 
         /// <summary>
         /// The identifier (or entity) which first created this entity
@@ -21,6 +19,12 @@
         TCreatedBy CreatedBy { get; set; }
     }
 
-#endif
+    /// <summary>
+    /// Metadata information about the entity creation, using a <see cref="string"/>
+    /// as an identifier for the <see cref="IHaveLocalCreatedMeta{T}.CreatedBy"/>
+    /// </summary>
+    public interface IHaveLocalCreatedMeta : IHaveLocalCreatedMeta<string>
+    {
 
+    }
 }
