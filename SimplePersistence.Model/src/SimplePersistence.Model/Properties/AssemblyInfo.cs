@@ -10,6 +10,16 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+#if !(portable40 || portable)
+
 [assembly: ComVisible(false)]
-[assembly: CLSCompliant(true)]
+
 [assembly: Guid("26bf2ceb-dec6-43c8-a94d-6d993ea9ffe6")]
+
+#endif
+
+[assembly: CLSCompliant(true)]
+
+[assembly: AssemblyVersion("2.0.0.0")]
+[assembly: AssemblyFileVersion("2.1.0.0")]
