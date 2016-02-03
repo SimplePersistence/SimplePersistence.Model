@@ -45,6 +45,15 @@ namespace SimplePersistence.Model
         TCreatedBy CreatedBy { get; set; }
     }
 
+    /// <summary>
+    /// Metadata information about the entity creation, using a <see cref="string"/>
+    /// as an identifier for the <see cref="IHaveCreatedMeta{T}.CreatedBy"/>
+    /// </summary>
+    public interface IHaveCreatedMeta : IHaveCreatedMeta<string>
+    {
+
+    }
+
 #endif
 
 }
