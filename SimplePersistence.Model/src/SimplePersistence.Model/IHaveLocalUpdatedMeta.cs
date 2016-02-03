@@ -22,10 +22,10 @@
 // SOFTWARE.
 #endregion
 
-using System;
-
 namespace SimplePersistence.Model
 {
+    using System;
+
     /// <summary>
     /// Metadata information about the entity last update
     /// </summary>

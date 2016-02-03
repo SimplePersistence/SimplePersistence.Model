@@ -22,10 +22,10 @@
 // SOFTWARE.
 #endregion
 
-using System;
-
 namespace SimplePersistence.Model
 {
+    using System;
+
 #if !NET20
 
     /// <summary>
