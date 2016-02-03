@@ -26,17 +26,15 @@ namespace SimplePersistence.Model
     using System;
 
     /// <summary>
-    /// Represents an entity that has an unique identifier, local created, updated metadata and version info, 
+    /// Represents an entity that has an unique identifier, local created metadata and version info, 
     /// using a byte[] for the <see cref="IHaveVersion{T}.Version"/>.
     /// </summary>
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     /// <typeparam name="TCreatedBy">The created by type</typeparam>
-    /// <typeparam name="TUpdatedBy">The updated by type</typeparam>
-    public abstract class EntityWithLocalCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity, TCreatedBy, TUpdatedBy>
-        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveLocalUpdatedMeta<TUpdatedBy>, IHaveVersion<byte[]>
+    public abstract class EntityWithLocalCreatedMetaAndVersionAsByteArray<TIdentity, TCreatedBy>
+        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveVersion<byte[]>
     {
         private DateTime _createdOn;
-        private DateTime _updatedOn;
 
         #region Implementation of IHaveLocalCreatedMeta<TCreatedBy>
 
@@ -56,24 +54,6 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveLocalUpdatedMeta<TUpdatedBy>
-
-        /// <summary>
-        /// The <see cref="DateTime"/> when it was last updated
-        /// </summary>
-        public virtual DateTime UpdatedOn
-        {
-            get { return _updatedOn; }
-            set { _updatedOn = value; }
-        }
-
-        /// <summary>
-        /// The identifier (or entity) which last updated this entity
-        /// </summary>
-        public virtual TUpdatedBy UpdatedBy { get; set; }
-
-        #endregion
-
         #region Implementation of IHaveVersion<TVersion>
 
         /// <summary>
@@ -84,36 +64,23 @@ namespace SimplePersistence.Model
         #endregion
 
         /// <summary>
-        /// Creates a new instance and sets the <see cref="CreatedOn"/> and 
-        /// <see cref="UpdatedOn"/> to <see cref="DateTime.Now"/>
+        /// Creates a new instance and sets the <see cref="CreatedOn"/> 
+        /// to <see cref="DateTime.Now"/>
         /// </summary>
-        protected EntityWithLocalCreatedAndUpdatedMetaAndVersionAsByteArray()
+        protected EntityWithLocalCreatedMetaAndVersionAsByteArray()
         {
-            _createdOn = _updatedOn = DateTime.Now;
+            _createdOn = DateTime.Now;
         }
-    }
-
-    /// <summary>
-    /// Represents an entity that has an unique identifier, created, updated metadata and version info, 
-    /// using a byte[] for the <see cref="IHaveVersion{T}.Version"/>.
-    /// </summary>
-    /// <typeparam name="TIdentity">The identifier type</typeparam>
-    /// <typeparam name="TCreatedAndUpdated">The created, updated and deleted by type</typeparam>
-    public abstract class EntityWithLocalCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity, TCreatedAndUpdated>
-        : EntityWithLocalCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity, TCreatedAndUpdated, TCreatedAndUpdated>
-    {
-
     }
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata and version info, 
     /// using a byte[] for the <see cref="IHaveVersion{T}.Version"/> and a <see cref="string"/> as an 
-    /// identifier for the <see cref="IHaveLocalCreatedMeta{T}.CreatedBy"/> and
-    /// <see cref="IHaveLocalUpdatedMeta{T}.UpdatedBy"/>
+    /// identifier for the <see cref="IHaveLocalCreatedMeta{T}.CreatedBy"/>
     /// </summary>
     /// <typeparam name="TIdentity">The identifier type</typeparam>
-    public abstract class EntityWithLocalCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity>
-        : EntityWithLocalCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity, string, string>, IHaveLocalCreatedMeta, IHaveLocalUpdatedMeta
+    public abstract class EntityWithLocalCreatedMetaAndVersionAsByteArray<TIdentity>
+        : EntityWithLocalCreatedMetaAndVersionAsByteArray<TIdentity, string>, IHaveLocalCreatedMeta
     {
 
     }
