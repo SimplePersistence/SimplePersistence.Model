@@ -15,7 +15,8 @@
       },
       "frameworkAssemblies": {
         "mscorlib": "",
-        "System": ""
+        "System": "",
+        "System.Core": ""
       }
     },
     ".NETPortable,Version=v4.5,Profile=Profile259": {
@@ -36,7 +37,8 @@
     "net20": {
       "frameworkAssemblies": {
         "mscorlib": "",
-        "System": ""
+        "System": "",
+        "System.Core" : ""
       }
     },
     "net35": {
