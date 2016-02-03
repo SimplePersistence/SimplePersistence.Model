@@ -65,7 +65,11 @@ namespace SimplePersistence.Model.Helper
         /// <typeparam name="TBy">The created by type</typeparam>
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
+#if NET20
+        public static T CreatedBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+#else
         public static T CreatedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+#endif
             where T : IHaveLocalCreatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
