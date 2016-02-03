@@ -1,5 +1,5 @@
 ﻿{
-  "version": "2.1.0-*",
+  "version": "3.0.1-beta",
   "title": "SimplePersistence.Model",
   "description": "Library that provides consistente model classes guaranteeing ORM compatibility.",
   "authors": [ "João Simões" ],
@@ -7,6 +7,8 @@
   "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",
   "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
   "language": "en-US",
+  "copyright": "Copyright © 2016 SimplePersistence",
+  "releaseNotes": "Removed System.Core dependency for .NET 2.0",
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
@@ -37,8 +39,7 @@
     "net20": {
       "frameworkAssemblies": {
         "mscorlib": "",
-        "System": "",
-        "System.Core" : ""
+        "System": ""
       }
     },
     "net35": {
