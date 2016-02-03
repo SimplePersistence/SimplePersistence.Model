@@ -66,9 +66,9 @@ namespace SimplePersistence.Model.Helper
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
-        public static T InitializedBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T InitializedLocallyBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
 #else
-        public static T InitializedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T InitializedLocallyBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
 #endif
             where T : IHaveLocalCreatedMeta<TBy>, IHaveLocalUpdatedMeta<TBy>
         {

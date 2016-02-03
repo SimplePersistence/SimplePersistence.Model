@@ -68,9 +68,9 @@ namespace SimplePersistence.Model.Helper
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
-        public static T UpdatedAndDeletedBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T UpdatedAndDeletedLocallyBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
 #else
-        public static T UpdatedAndDeletedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T UpdatedAndDeletedLocallyBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
 #endif
             where T : IHaveLocalDeletedMeta<TBy>, IHaveLocalUpdatedMeta<TBy>
         {
