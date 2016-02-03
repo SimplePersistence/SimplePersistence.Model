@@ -2,8 +2,6 @@
 {
     using System;
 
-#if !NET20
-
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated and deleted metadata
     /// </summary>
@@ -11,18 +9,18 @@
     /// <typeparam name="TCreatedBy">The created by type</typeparam>
     /// <typeparam name="TUpdatedBy">The updated by type</typeparam>
     /// <typeparam name="TDeletedBy">The deleted by type</typeparam>
-    public abstract class EntityWithAllMeta<TIdentity, TCreatedBy, TUpdatedBy, TDeletedBy>
-        : Entity<TIdentity>, IHaveCreatedMeta<TCreatedBy>, IHaveUpdatedMeta<TUpdatedBy>, IHaveDeletedMeta<TDeletedBy>
+    public abstract class EntityWithAllLocalMeta<TIdentity, TCreatedBy, TUpdatedBy, TDeletedBy>
+        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveLocalUpdatedMeta<TUpdatedBy>, IHaveLocalDeletedMeta<TDeletedBy>
     {
-        private DateTimeOffset _createdOn;
-        private DateTimeOffset _updatedOn;
+        private DateTime _createdOn;
+        private DateTime _updatedOn;
 
-        #region Implementation of IHaveCreatedMeta<TCreatedBy>
+        #region Implementation of IHaveLocalCreatedMeta<TCreatedBy>
 
         /// <summary>
-        /// The <see cref="DateTimeOffset"/> when it was created
+        /// The <see cref="DateTime"/> when it was created
         /// </summary>
-        public virtual DateTimeOffset CreatedOn
+        public virtual DateTime CreatedOn
         {
             get { return _createdOn; }
             set { _createdOn = value; }
@@ -35,12 +33,12 @@
 
         #endregion
 
-        #region Implementation of IHaveUpdatedMeta<TUpdatedBy>
+        #region Implementation of IHaveLocalUpdatedMeta<TUpdatedBy>
 
         /// <summary>
-        /// The <see cref="DateTimeOffset"/> when it was last updated
+        /// The <see cref="DateTime"/> when it was last updated
         /// </summary>
-        public virtual DateTimeOffset UpdatedOn
+        public virtual DateTime UpdatedOn
         {
             get { return _updatedOn; }
             set { _updatedOn = value; }
@@ -53,12 +51,12 @@
 
         #endregion
 
-        #region Implementation of IHaveDeletedMeta<TDeletedBy>
+        #region Implementation of IHaveLocalDeletedMeta<TDeletedBy>
 
         /// <summary>
-        /// The <see cref="DateTimeOffset"/> when it was soft deleted
+        /// The <see cref="DateTime"/> when it was soft deleted
         /// </summary>
-        public virtual DateTimeOffset? DeletedOn { get; set; }
+        public virtual DateTime? DeletedOn { get; set; }
 
         /// <summary>
         /// The identifier (or entity) which soft deleted this entity
@@ -69,11 +67,11 @@
 
         /// <summary>
         /// Creates a new instance and sets the <see cref="CreatedOn"/> and 
-        /// <see cref="UpdatedOn"/> to <see cref="DateTimeOffset.Now"/>
+        /// <see cref="UpdatedOn"/> to <see cref="DateTime.Now"/>
         /// </summary>
-        protected EntityWithAllMeta()
+        protected EntityWithAllLocalMeta()
         {
-            _createdOn = _updatedOn = DateTimeOffset.Now;
+            _createdOn = _updatedOn = DateTime.Now;
         }
     }
 
@@ -82,23 +80,21 @@
     /// </summary>
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     /// <typeparam name="TCreatedUpdatedAndDeleted">The created, updated and deleted by type</typeparam>
-    public abstract class EntityWithAllMeta<TIdentity, TCreatedUpdatedAndDeleted>
-        : EntityWithAllMeta<TIdentity, TCreatedUpdatedAndDeleted, TCreatedUpdatedAndDeleted, TCreatedUpdatedAndDeleted>
+    public abstract class EntityWithAllLocalMeta<TIdentity, TCreatedUpdatedAndDeleted>
+        : EntityWithAllLocalMeta<TIdentity, TCreatedUpdatedAndDeleted, TCreatedUpdatedAndDeleted, TCreatedUpdatedAndDeleted>
     {
 
     }
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated and deleted metadata,
-    /// using a <see cref="string"/> as an identifier for the <see cref="IHaveCreatedMeta{T}.CreatedBy"/>,
-    /// <see cref="IHaveUpdatedMeta{T}.UpdatedBy"/> and <see cref="IHaveDeletedMeta{T}.DeletedBy"/>
+    /// using a <see cref="string"/> as an identifier for the <see cref="IHaveLocalCreatedMeta{T}.CreatedBy"/>,
+    /// <see cref="IHaveLocalUpdatedMeta{T}.UpdatedBy"/> and <see cref="IHaveLocalDeletedMeta{T}.DeletedBy"/>
     /// </summary>
     /// <typeparam name="TIdentity">The identifier type</typeparam>
-    public abstract class EntityWithAllMeta<TIdentity>
-        : EntityWithAllMeta<TIdentity, string, string, string>, IHaveCreatedMeta, IHaveUpdatedMeta, IHaveDeletedMeta
+    public abstract class EntityWithAllLocalMeta<TIdentity>
+        : EntityWithAllLocalMeta<TIdentity, string, string, string>, IHaveLocalCreatedMeta, IHaveLocalUpdatedMeta, IHaveLocalDeletedMeta
     {
 
     }
-
-#endif
 }
