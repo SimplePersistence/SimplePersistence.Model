@@ -1,0 +1,34 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "Unit test library for SimplePersistence.Model",
+  "authors": [ "João Simões" ],
+  "tags": [ "database", "model", "persistence", "unit tests" ],
+  "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",
+  "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
+  "language": "en-US",
+  "copyright": "Copyright © 2016 SimplePersistence",
+
+  "frameworks": {
+    ".NETPortable,Version=v4.0,Profile=Profile328": {
+      "compilationOptions": {
+        "define": [ "portable40" ]
+      }
+    },
+    ".NETPortable,Version=v4.5,Profile=Profile259": {
+      "compilationOptions": {
+        "define": [ "portable" ]
+      }
+    },
+    "dotnet": { },
+    "net20": { },
+    "net35": { },
+    "net40": { },
+    "net45": { }
+  },
+
+  "dependencies": {
+    "SimplePersistence.Model": {
+      "target": "project"
+    }
+  }
+}
