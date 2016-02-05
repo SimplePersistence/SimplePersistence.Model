@@ -8,7 +8,7 @@
   "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Changed helpers signature for local model extensions",
+  "releaseNotes": "Removed requirements for IEquatable<TKey>\nAdded support for .NET Core and others\nRemoved System.Core dependency for .NET 2.0 package\nChanged helpers signature for local model extensions",
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
