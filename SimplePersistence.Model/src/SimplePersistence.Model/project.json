@@ -1,5 +1,5 @@
 ﻿{
-  "version": "3.0.2-beta",
+  "version": "3.0.0-rc1",
   "title": "SimplePersistence.Model",
   "description": "Library that provides consistente model classes guaranteeing ORM compatibility.",
   "authors": [ "João Simões" ],
