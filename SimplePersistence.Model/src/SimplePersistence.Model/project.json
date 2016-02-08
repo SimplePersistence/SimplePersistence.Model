@@ -1,7 +1,7 @@
 ﻿{
   "version": "3.0.0",
   "title": "SimplePersistence.Model",
-  "description": "Library that provides consistente model classes guaranteeing ORM compatibility.",
+  "description": "Library with helper interfaces and classes to provide consistency across application models. Implementations are ORM compatible and should be usable in most databases.",
   "authors": [ "João Simões" ],
   "tags": [ "database", "model", "persistence" ],
   "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",

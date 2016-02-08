@@ -18,7 +18,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SimplePersistence.Model")]
 #endif
 
-[assembly: AssemblyDescription("Library that provides consistente model classes guaranteeing ORM compatibility.")]
+[assembly: AssemblyDescription("Library with helper interfaces and classes to provide consistency across application models. Implementations are ORM compatible and should be usable in most databases.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Net.JoaoSimoes")]
 [assembly: AssemblyProduct("SimplePersistence")]
