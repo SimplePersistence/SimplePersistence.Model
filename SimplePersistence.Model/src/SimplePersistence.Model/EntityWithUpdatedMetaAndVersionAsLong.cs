@@ -34,7 +34,7 @@ namespace SimplePersistence.Model
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     /// <typeparam name="TUpdatedBy">The updated by type</typeparam>
     public abstract class EntityWithUpdatedMetaAndVersionAsLong<TIdentity, TUpdatedBy>
-        :Entity<TIdentity>, IHaveUpdatedMeta<TUpdatedBy>, IHaveVersion<long>
+        :Entity<TIdentity>, IHaveUpdatedMeta<TUpdatedBy>, IHaveVersionAsLong
     {
         private DateTimeOffset _updatedOn;
 
@@ -56,7 +56,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsLong
 
         /// <summary>
         /// The entity version

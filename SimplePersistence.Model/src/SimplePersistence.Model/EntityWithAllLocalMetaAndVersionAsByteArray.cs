@@ -34,7 +34,7 @@ namespace SimplePersistence.Model
     /// <typeparam name="TUpdatedBy">The updated by type</typeparam>
     /// <typeparam name="TDeletedBy">The deleted by type</typeparam>
     public abstract class EntityWithAllLocalMetaAndVersionAsByteArray<TIdentity, TCreatedBy, TUpdatedBy, TDeletedBy>
-        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveLocalUpdatedMeta<TUpdatedBy>, IHaveLocalDeletedMeta<TDeletedBy>, IHaveVersion<byte[]>
+        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveLocalUpdatedMeta<TUpdatedBy>, IHaveLocalDeletedMeta<TDeletedBy>, IHaveVersionAsByteArray
     {
         private DateTime _createdOn;
         private DateTime _updatedOn;
@@ -89,7 +89,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsByteArray
 
         /// <summary>
         /// The entity version

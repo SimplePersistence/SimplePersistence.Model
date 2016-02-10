@@ -29,7 +29,7 @@ namespace SimplePersistence.Model
     /// </summary>
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     public abstract class EntityWithSoftDeleteAndVersionAsByteArray<TIdentity>
-        :Entity<TIdentity>, IHaveSoftDelete, IHaveVersion<byte[]>
+        :Entity<TIdentity>, IHaveSoftDelete, IHaveVersionAsByteArray
     {
         #region Implementation of IHaveSoftDelete
 
@@ -40,7 +40,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsByteArray
 
         /// <summary>
         /// The entity version

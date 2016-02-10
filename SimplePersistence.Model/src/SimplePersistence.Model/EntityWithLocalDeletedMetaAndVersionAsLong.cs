@@ -32,7 +32,7 @@ namespace SimplePersistence.Model
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     /// <typeparam name="TDeletedBy">The deleted by type</typeparam>
     public abstract class EntityWithLocalDeletedMetaAndVersionAsLong<TIdentity, TDeletedBy>
-        : Entity<TIdentity>, IHaveLocalDeletedMeta<TDeletedBy>, IHaveVersion<long>
+        : Entity<TIdentity>, IHaveLocalDeletedMeta<TDeletedBy>, IHaveVersionAsLong
     {
         #region Implementation of IHaveLocalDeletedMeta<TDeletedBy>
 
@@ -48,7 +48,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsLong
 
         /// <summary>
         /// The entity version

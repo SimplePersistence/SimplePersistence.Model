@@ -34,7 +34,7 @@ namespace SimplePersistence.Model
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     /// <typeparam name="TCreatedBy">The created by type</typeparam>
     public abstract class EntityWithCreatedMetaAndVersionAsLong<TIdentity, TCreatedBy>
-        :Entity<TIdentity>, IHaveCreatedMeta<TCreatedBy>, IHaveVersion<long>
+        :Entity<TIdentity>, IHaveCreatedMeta<TCreatedBy>, IHaveVersionAsLong
     {
         private DateTimeOffset _createdOn;
 
@@ -56,7 +56,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsLong
 
         /// <summary>
         /// The entity version

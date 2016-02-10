@@ -29,7 +29,7 @@ namespace SimplePersistence.Model
     /// </summary>
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     public abstract class EntityWithSoftDeleteAndVersionAsLong<TIdentity>
-        : Entity<TIdentity>, IHaveSoftDelete, IHaveVersion<long>
+        : Entity<TIdentity>, IHaveSoftDelete, IHaveVersionAsLong
     {
         #region Implementation of IHaveSoftDelete
 
@@ -40,7 +40,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsLong
 
         /// <summary>
         /// The entity version

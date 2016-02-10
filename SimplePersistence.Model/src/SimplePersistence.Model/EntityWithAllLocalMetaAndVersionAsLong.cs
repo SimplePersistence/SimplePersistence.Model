@@ -34,7 +34,7 @@ namespace SimplePersistence.Model
     /// <typeparam name="TUpdatedBy">The updated by type</typeparam>
     /// <typeparam name="TDeletedBy">The deleted by type</typeparam>
     public abstract class EntityWithAllLocalMetaAndVersionAsLong<TIdentity, TCreatedBy, TUpdatedBy, TDeletedBy>
-        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveLocalUpdatedMeta<TUpdatedBy>, IHaveLocalDeletedMeta<TDeletedBy>, IHaveVersion<long>
+        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveLocalUpdatedMeta<TUpdatedBy>, IHaveLocalDeletedMeta<TDeletedBy>, IHaveVersionAsLong
     {
         private DateTime _createdOn;
         private DateTime _updatedOn;
@@ -89,7 +89,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsLong
 
         /// <summary>
         /// The entity version

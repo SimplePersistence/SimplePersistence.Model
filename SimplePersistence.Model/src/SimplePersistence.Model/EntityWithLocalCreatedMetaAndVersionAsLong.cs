@@ -32,7 +32,7 @@ namespace SimplePersistence.Model
     /// <typeparam name="TIdentity">The identifier type</typeparam>
     /// <typeparam name="TCreatedBy">The created by type</typeparam>
     public abstract class EntityWithLocalCreatedMetaAndVersionAsLong<TIdentity, TCreatedBy>
-        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveVersion<long>
+        : Entity<TIdentity>, IHaveLocalCreatedMeta<TCreatedBy>, IHaveVersionAsLong
     {
         private DateTime _createdOn;
 
@@ -54,7 +54,7 @@ namespace SimplePersistence.Model
 
         #endregion
 
-        #region Implementation of IHaveVersion<TVersion>
+        #region Implementation of IHaveVersionAsLong
 
         /// <summary>
         /// The entity version
