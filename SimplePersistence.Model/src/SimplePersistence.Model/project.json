@@ -6,6 +6,7 @@
   "tags": [ "database", "model", "persistence" ],
   "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",
   "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
+  "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
   "releaseNotes": "Removed requirements for IEquatable<TKey>\nAdded support for .NET Core and others\nRemoved System.Core dependency for .NET 2.0 package\nChanged helpers signature for local model extensions",
