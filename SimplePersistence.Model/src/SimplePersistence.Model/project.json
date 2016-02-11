@@ -28,7 +28,7 @@
         "System.Runtime": "4.0.0"
       }
     },
-    "dotnet5": {
+    "dotnet": {
       "dependencies": {
         "Microsoft.CSharp": "4.0.0",
         "System.Runtime": "4.0.0"
