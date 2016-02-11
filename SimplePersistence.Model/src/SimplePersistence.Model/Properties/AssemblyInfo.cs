@@ -28,7 +28,7 @@ using System.Runtime.InteropServices;
 
 #if PORTABLE40
 [assembly: AssemblyTitle("SimplePersistence.Model Portable .NET 4.0")]
-#elif PORTABLE
+#elif NETCORE45
 [assembly: AssemblyTitle("SimplePersistence.Model Portable")]
 #elif DOTNET
 [assembly: AssemblyTitle("SimplePersistence.Model .NET Platform")]
@@ -60,5 +60,5 @@ using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
 
-[assembly: AssemblyVersion("3.0.1")]
-[assembly: AssemblyInformationalVersion("3.0.1")]
+[assembly: AssemblyVersion("3.0.2")]
+[assembly: AssemblyInformationalVersion("3.0.2")]
