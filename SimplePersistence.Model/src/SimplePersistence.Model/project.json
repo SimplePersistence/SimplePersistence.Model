@@ -1,5 +1,5 @@
 ﻿{
-  "version": "3.0.1",
+  "version": "3.0.2-alpha1",
   "title": "SimplePersistence.Model",
   "description": "Library with helper interfaces and classes to provide consistency across application models. Implementations are ORM compatible and should be usable in most databases.",
   "authors": [ "João Simões" ],
@@ -22,48 +22,26 @@
         "System.Core": ""
       }
     },
-    ".NETPortable,Version=v4.5,Profile=Profile259": {
-      "compilationOptions": {
-        "define": [ "PORTABLE" ]
-      },
-      "frameworkAssemblies": {
-        "Microsoft.CSharp": "",
-        "System": "",
-        "System.Runtime": ""
-      }
-    },
-    "dotnet": {
+    "dnxcore5": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0"
+        "Microsoft.CSharp": "4.0.0",
+        "System.Runtime": "4.0.0"
       }
     },
-    "net20": {
-      "frameworkAssemblies": {
-        "mscorlib": "",
-        "System": ""
+    "dotnet5": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.0",
+        "System.Runtime": "4.0.0"
       }
     },
-    "net35": {
-      "frameworkAssemblies": {
-        "mscorlib": "",
-        "System": "",
-        "System.Core": ""
-      }
-    },
-    "net40": {
-      "frameworkAssemblies": {
-        "Microsoft.CSharp": "",
-        "mscorlib": "",
-        "System": "",
-        "System.Core": ""
-      }
-    },
-    "net45": {
-      "frameworkAssemblies": {
-        "Microsoft.CSharp": "",
-        "mscorlib": "",
-        "System": "",
-        "System.Core": ""
+    "net20": { },
+    "net35": { },
+    "net40": { },
+    "net45": { },
+    "netcore45": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.0",
+        "System.Runtime": "4.0.0"
       }
     }
   }

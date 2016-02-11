@@ -45,6 +45,11 @@
       "dependencies": {
         "NUnit": "3.0.1"
       }
+    },
+    "netcore45": {
+      "dependencies": {
+        "NUnit": "3.0.1"
+      }
     }
   },
 
