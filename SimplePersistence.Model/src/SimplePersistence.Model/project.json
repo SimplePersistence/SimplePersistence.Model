@@ -24,14 +24,12 @@
     },
     "dnxcore5": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0",
-        "System.Runtime": "4.0.0"
+        "Microsoft.CSharp": "4.0.0"
       }
     },
     "dotnet": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0",
-        "System.Runtime": "4.0.0"
+        "Microsoft.CSharp": "4.0.0"
       }
     },
     "net20": { },
@@ -40,8 +38,7 @@
     "net45": { },
     "netcore45": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0",
-        "System.Runtime": "4.0.0"
+        "Microsoft.CSharp": "4.0.0"
       }
     }
   }
