@@ -11,7 +11,7 @@ Install-Package SimplePersistence.Model
 ## Usage
 
 ```csharp
-public class Application : EntityWithAllMetaAndVersionAsByteArray<string>
+public class Application : EntityWithAllMetaAndVersionAsByteArray<string>// IEntity<string>, IHaveCreatedMeta, IHaveUpdatedMeta, IHaveDeletedMeta, IHaveVersionAsByteArray
 {
     private ICollection<Log> _logs;
 
@@ -29,7 +29,7 @@ public class Application : EntityWithAllMetaAndVersionAsByteArray<string>
     }
 }
 
-public class Level : EntityWithAllMetaAndVersionAsByteArray<string>
+public class Level : EntityWithAllMetaAndVersionAsByteArray<string>// IEntity<string>, IHaveCreatedMeta, IHaveUpdatedMeta, IHaveDeletedMeta, IHaveVersionAsByteArray
 {
     private ICollection<Log> _logs;
 
@@ -47,7 +47,7 @@ public class Level : EntityWithAllMetaAndVersionAsByteArray<string>
     }
 }
 
-public class Log : EntityWithCreatedMeta<long>
+public class Log : EntityWithCreatedMeta<long>// IEntity<long>, IHaveCreatedMeta
 {
     public string LevelId { get; set; }
 
