@@ -9,7 +9,7 @@
   "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Improved support for multiple framework versions",
+  "releaseNotes": "Removed dependency on Microsoft.CSharp",
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
@@ -24,12 +24,14 @@
     },
     "dnxcore5": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0"
+        "System.Runtime": "4.0.0",
+        "System.Runtime.InteropServices": "4.0.0"
       }
     },
     "dotnet": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0"
+        "System.Runtime": "4.0.0",
+        "System.Runtime.InteropServices": "4.0.0"
       }
     },
     "net20": { },
@@ -38,7 +40,8 @@
     "net45": { },
     "netcore45": {
       "dependencies": {
-        "Microsoft.CSharp": "4.0.0"
+        "System.Runtime": "4.0.0",
+        "System.Runtime.InteropServices": "4.0.0"
       }
     }
   }
