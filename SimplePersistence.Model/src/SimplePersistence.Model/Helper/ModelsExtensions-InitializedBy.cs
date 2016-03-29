@@ -43,13 +43,13 @@ namespace SimplePersistence.Model.Helper
         /// <typeparam name="TBy">The created by type</typeparam>
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
-        public static T InitializedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTimeOffset? @on = null)
+        public static T InitializedBy<T, TBy>(this T entity, TBy by = default(TBy), DateTimeOffset? on = null)
             where T : IHaveCreatedMeta<TBy>, IHaveUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.CreatedOn = entity.UpdatedOn = @on ?? DateTimeOffset.Now;
-            entity.CreatedBy = entity.UpdatedBy = @by;
+            entity.CreatedOn = entity.UpdatedOn = on ?? DateTimeOffset.Now;
+            entity.CreatedBy = entity.UpdatedBy = by;
             return entity;
         }
 
@@ -66,16 +66,16 @@ namespace SimplePersistence.Model.Helper
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
-        public static T InitializedLocallyBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T InitializedLocallyBy<T, TBy>(T entity, TBy by = default(TBy), DateTime? on = null)
 #else
-        public static T InitializedLocallyBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T InitializedLocallyBy<T, TBy>(this T entity, TBy by = default(TBy), DateTime? on = null)
 #endif
             where T : IHaveLocalCreatedMeta<TBy>, IHaveLocalUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.CreatedOn = entity.UpdatedOn = @on ?? DateTime.UtcNow;
-            entity.CreatedBy = entity.UpdatedBy = @by;
+            entity.CreatedOn = entity.UpdatedOn = on ?? DateTime.UtcNow;
+            entity.CreatedBy = entity.UpdatedBy = by;
             return entity;
         }
     }

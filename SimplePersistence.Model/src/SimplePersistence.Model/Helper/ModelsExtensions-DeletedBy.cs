@@ -43,13 +43,13 @@ namespace SimplePersistence.Model.Helper
         /// <typeparam name="TBy">The deleted by type</typeparam>
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
-        public static T DeletedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTimeOffset? @on = null)
+        public static T DeletedBy<T, TBy>(this T entity, TBy by = default(TBy), DateTimeOffset? on = null)
             where T : IHaveDeletedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.DeletedOn = @on ?? DateTimeOffset.Now;
-            entity.DeletedBy = @by;
+            entity.DeletedOn = on ?? DateTimeOffset.Now;
+            entity.DeletedBy = by;
             return entity;
         }
 
@@ -66,16 +66,16 @@ namespace SimplePersistence.Model.Helper
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
-        public static T DeletedLocallyBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T DeletedLocallyBy<T, TBy>(T entity, TBy by = default(TBy), DateTime? on = null)
 #else
-        public static T DeletedLocallyBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T DeletedLocallyBy<T, TBy>(this T entity, TBy by = default(TBy), DateTime? on = null)
 #endif
             where T : IHaveLocalDeletedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.DeletedOn = @on ?? DateTime.UtcNow;
-            entity.DeletedBy = @by;
+            entity.DeletedOn = on ?? DateTime.UtcNow;
+            entity.DeletedBy = by;
             return entity;
         }
 

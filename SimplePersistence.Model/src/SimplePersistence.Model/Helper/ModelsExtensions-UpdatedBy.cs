@@ -43,13 +43,13 @@ namespace SimplePersistence.Model.Helper
         /// <typeparam name="TBy">The updated by type</typeparam>
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
-        public static T UpdatedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTimeOffset? @on = null)
+        public static T UpdatedBy<T, TBy>(this T entity, TBy by = default(TBy), DateTimeOffset? on = null)
             where T : IHaveUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.UpdatedOn = @on ?? DateTimeOffset.Now;
-            entity.UpdatedBy = @by;
+            entity.UpdatedOn = on ?? DateTimeOffset.Now;
+            entity.UpdatedBy = by;
             return entity;
         }
 
@@ -66,16 +66,16 @@ namespace SimplePersistence.Model.Helper
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
-        public static T UpdatedLocallyBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T UpdatedLocallyBy<T, TBy>(T entity, TBy by = default(TBy), DateTime? on = null)
 #else
-        public static T UpdatedLocallyBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T UpdatedLocallyBy<T, TBy>(this T entity, TBy by = default(TBy), DateTime? on = null)
 #endif
             where T : IHaveLocalUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.UpdatedOn = @on ?? DateTime.UtcNow;
-            entity.UpdatedBy = @by;
+            entity.UpdatedOn = on ?? DateTime.UtcNow;
+            entity.UpdatedBy = by;
             return entity;
         }
     }
