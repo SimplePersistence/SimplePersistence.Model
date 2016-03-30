@@ -40,7 +40,7 @@ namespace SimplePersistence.Model.Helper
         /// <param name="by">Who created the entity</param>
         /// <typeparam name="T">The entity type</typeparam>
         /// <typeparam name="TBy">The created by type</typeparam>
-        /// <returns>The received entity after changes</returns>
+        /// <returns>True if the instance was created by the given parameter</returns>
         /// <exception cref="ArgumentNullException"/>
         public static bool WasCreatedBy<T, TBy>(this T entity, TBy by)
             where T : IHaveCreatedMeta<TBy>
@@ -59,7 +59,7 @@ namespace SimplePersistence.Model.Helper
         /// <param name="by">Who created the entity</param>
         /// <typeparam name="T">The entity type</typeparam>
         /// <typeparam name="TBy">The created by type</typeparam>
-        /// <returns>The received entity after changes</returns>
+        /// <returns>True if the instance was created by the given parameter</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
         public static bool WasCreatedLocallyBy<T, TBy>(T entity, TBy by)
