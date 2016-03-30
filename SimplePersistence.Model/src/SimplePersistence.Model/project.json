@@ -10,7 +10,7 @@
   "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
   "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Added extensions WasCreated*",
+  "releaseNotes": "Added extensions WasCreated*\nAdded extensions WasDeleted* and IsDeleted",
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
