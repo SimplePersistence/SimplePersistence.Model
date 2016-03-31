@@ -44,13 +44,13 @@ namespace SimplePersistence.Model.Helper
         /// <typeparam name="TBy">The deleted by type</typeparam>
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
-        public static T UpdatedAndDeletedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTimeOffset? @on = null)
+        public static T UpdatedAndDeletedBy<T, TBy>(this T entity, TBy by = default(TBy), DateTimeOffset? on = null)
             where T : IHaveDeletedMeta<TBy>, IHaveUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.DeletedOn = entity.UpdatedOn = @on ?? DateTimeOffset.Now;
-            entity.DeletedBy = entity.UpdatedBy = @by;
+            entity.DeletedOn = entity.UpdatedOn = on ?? DateTimeOffset.Now;
+            entity.DeletedBy = entity.UpdatedBy = by;
             return entity;
         }
 
@@ -68,16 +68,16 @@ namespace SimplePersistence.Model.Helper
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
-        public static T UpdatedAndDeletedLocallyBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T UpdatedAndDeletedLocallyBy<T, TBy>(T entity, TBy by = default(TBy), DateTime? on = null)
 #else
-        public static T UpdatedAndDeletedLocallyBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T UpdatedAndDeletedLocallyBy<T, TBy>(this T entity, TBy by = default(TBy), DateTime? on = null)
 #endif
             where T : IHaveLocalDeletedMeta<TBy>, IHaveLocalUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.DeletedOn = entity.UpdatedOn = @on ?? DateTime.UtcNow;
-            entity.DeletedBy = entity.UpdatedBy = @by;
+            entity.DeletedOn = entity.UpdatedOn = on ?? DateTime.UtcNow;
+            entity.DeletedBy = entity.UpdatedBy = by;
             return entity;
         }
     }

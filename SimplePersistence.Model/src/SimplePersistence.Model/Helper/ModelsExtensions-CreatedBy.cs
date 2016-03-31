@@ -43,13 +43,13 @@ namespace SimplePersistence.Model.Helper
         /// <typeparam name="TBy">The created by type</typeparam>
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
-        public static T CreatedBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTimeOffset? @on = null)
+        public static T CreatedBy<T, TBy>(this T entity, TBy by = default(TBy), DateTimeOffset? on = null)
             where T : IHaveCreatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.CreatedOn = @on ?? DateTimeOffset.Now;
-            entity.CreatedBy = @by;
+            entity.CreatedOn = on ?? DateTimeOffset.Now;
+            entity.CreatedBy = by;
             return entity;
         }
 
@@ -66,16 +66,16 @@ namespace SimplePersistence.Model.Helper
         /// <returns>The received entity after changes</returns>
         /// <exception cref="ArgumentNullException"/>
 #if NET20
-        public static T CreatedLocallyBy<T, TBy>(T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T CreatedLocallyBy<T, TBy>(T entity, TBy by = default(TBy), DateTime? on = null)
 #else
-        public static T CreatedLocallyBy<T, TBy>(this T entity, TBy @by = default(TBy), DateTime? @on = null)
+        public static T CreatedLocallyBy<T, TBy>(this T entity, TBy by = default(TBy), DateTime? on = null)
 #endif
             where T : IHaveLocalCreatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
 
-            entity.CreatedOn = @on ?? DateTime.UtcNow;
-            entity.CreatedBy = @by;
+            entity.CreatedOn = on ?? DateTime.UtcNow;
+            entity.CreatedBy = by;
             return entity;
         }
     }
