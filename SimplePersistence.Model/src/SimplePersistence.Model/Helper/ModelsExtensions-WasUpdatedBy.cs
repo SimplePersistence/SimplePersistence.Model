@@ -46,8 +46,9 @@ namespace SimplePersistence.Model.Helper
             where T : IHaveUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
+            if (by == null) throw new ArgumentNullException(nameof(by));
 
-            return entity.UpdatedBy.Equals(by);
+            return by.Equals(entity.UpdatedBy);
         }
 
 #endif
@@ -69,8 +70,9 @@ namespace SimplePersistence.Model.Helper
             where T : IHaveLocalUpdatedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
+            if (by == null) throw new ArgumentNullException(nameof(by));
 
-            return entity.UpdatedBy.Equals(by);
+            return by.Equals(entity.UpdatedBy);
         }
     }
 }

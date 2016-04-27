@@ -46,8 +46,9 @@ namespace SimplePersistence.Model.Helper
             where T : IHaveDeletedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
+            if (by == null) throw new ArgumentNullException(nameof(by));
 
-            return entity.DeletedBy.Equals(by);
+            return by.Equals(entity.DeletedBy);
         }
 
 #endif
@@ -69,8 +70,9 @@ namespace SimplePersistence.Model.Helper
             where T : IHaveLocalDeletedMeta<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
+            if (by == null) throw new ArgumentNullException(nameof(by));
 
-            return entity.DeletedBy.Equals(by);
+            return by.Equals(entity.DeletedBy);
         }
     }
 }
