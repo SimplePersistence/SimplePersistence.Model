@@ -29,10 +29,33 @@ namespace SimplePersistence.Model
     /// <typeparam name="TIdentity">The unique identifier type</typeparam>
     public abstract class Entity<TIdentity> : IEntity<TIdentity>
     {
+        private TIdentity _id;
+
         /// <summary>
         /// Unique identifier
         /// </summary>
-        public virtual TIdentity Id { get; set; }
+        public virtual TIdentity Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        /// <summary>
+        /// Creates a new entity
+        /// </summary>
+        protected Entity()
+        {
+            
+        }
+
+        /// <summary>
+        /// Creates a new entity
+        /// </summary>
+        /// <param name="id">The id for the entity</param>
+        protected Entity(TIdentity id)
+        {
+            _id = id;
+        }
     }
 
     /// <summary>
