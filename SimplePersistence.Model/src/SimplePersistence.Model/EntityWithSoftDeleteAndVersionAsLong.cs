@@ -48,5 +48,20 @@ namespace SimplePersistence.Model
         public virtual long Version { get; set; }
 
         #endregion
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithSoftDeleteAndVersionAsLong()
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithSoftDeleteAndVersionAsLong(TIdentity id) : base(id)
+        {
+        }
     }
 }

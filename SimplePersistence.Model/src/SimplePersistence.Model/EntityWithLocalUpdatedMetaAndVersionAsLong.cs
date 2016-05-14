@@ -71,6 +71,16 @@ namespace SimplePersistence.Model
         {
             _updatedOn = DateTime.Now;
         }
+
+        /// <summary>
+        /// Creates a new instance and sets the <see cref="UpdatedOn"/> 
+        /// to <see cref="DateTime.Now"/>
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithLocalUpdatedMetaAndVersionAsLong(TIdentity id) : base(id)
+        {
+            _updatedOn = DateTime.Now;
+        }
     }
 
     /// <summary>
@@ -82,6 +92,19 @@ namespace SimplePersistence.Model
     public abstract class EntityWithLocalUpdatedMetaAndVersionAsLong<TIdentity>
         : EntityWithLocalUpdatedMetaAndVersionAsLong<TIdentity, string>, IHaveLocalUpdatedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithLocalUpdatedMetaAndVersionAsLong()
+        {
+        }
 
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithLocalUpdatedMetaAndVersionAsLong(TIdentity id) : base(id)
+        {
+        }
     }
 }

@@ -48,6 +48,23 @@ namespace SimplePersistence.Model
         public virtual TDeletedBy DeletedBy { get; set; }
 
         #endregion
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithDeletedMeta()
+        {
+            
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithDeletedMeta(TIdentity id) : base(id)
+        {
+            
+        }
     }
 
     /// <summary>
@@ -58,7 +75,22 @@ namespace SimplePersistence.Model
     public abstract class EntityWithDeletedMeta<TIdentity>
         : EntityWithDeletedMeta<TIdentity, string>, IHaveDeletedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithDeletedMeta()
+        {
 
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithDeletedMeta(TIdentity id) : base(id)
+        {
+
+        }
     }
 
 #endif

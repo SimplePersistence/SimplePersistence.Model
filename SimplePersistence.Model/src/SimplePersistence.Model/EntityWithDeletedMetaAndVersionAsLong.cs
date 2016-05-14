@@ -58,6 +58,23 @@ namespace SimplePersistence.Model
         public virtual long Version { get; set; }
 
         #endregion
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithDeletedMetaAndVersionAsLong()
+        {
+            
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithDeletedMetaAndVersionAsLong(TIdentity id) : base(id)
+        {
+            
+        }
     }
 
     /// <summary>
@@ -69,7 +86,22 @@ namespace SimplePersistence.Model
     public abstract class EntityWithDeletedMetaAndVersionAsLong<TIdentity>
         : EntityWithDeletedMetaAndVersionAsLong<TIdentity, string>, IHaveDeletedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithDeletedMetaAndVersionAsLong()
+        {
 
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithDeletedMetaAndVersionAsLong(TIdentity id) : base(id)
+        {
+
+        }
     }
 
 #endif

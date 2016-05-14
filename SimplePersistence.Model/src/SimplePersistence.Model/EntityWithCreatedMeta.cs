@@ -63,6 +63,16 @@ namespace SimplePersistence.Model
         {
             _createdOn = DateTimeOffset.Now;
         }
+
+        /// <summary>
+        /// Creates a new instance and sets the <see cref="CreatedOn"/> 
+        /// to <see cref="DateTimeOffset.Now"/>
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithCreatedMeta(TIdentity id) : base(id)
+        {
+            _createdOn = DateTimeOffset.Now;
+        }
     }
 
     /// <summary>
@@ -73,7 +83,22 @@ namespace SimplePersistence.Model
     public abstract class EntityWithCreatedMeta<TIdentity>
         : EntityWithCreatedMeta<TIdentity, string>, IHaveCreatedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithCreatedMeta()
+        {
+            
+        }
 
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithCreatedMeta(TIdentity id) : base(id)
+        {
+            
+        }
     }
 
 #endif

@@ -93,6 +93,17 @@ namespace SimplePersistence.Model
         {
             _createdOn = _updatedOn = DateTimeOffset.Now;
         }
+
+        /// <summary>
+        /// Creates a new instance and sets the <see cref="CreatedOn"/> and 
+        /// <see cref="UpdatedOn"/> to <see cref="DateTimeOffset.Now"/>
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+            _createdOn = _updatedOn = DateTimeOffset.Now;
+        }
     }
 
     /// <summary>
@@ -104,7 +115,23 @@ namespace SimplePersistence.Model
     public abstract class EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity, TCreatedAndUpdated>
         : EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity, TCreatedAndUpdated, TCreatedAndUpdated>
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray()
+        {
+            
+        }
 
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+            
+        }
     }
 
     /// <summary>
@@ -117,7 +144,23 @@ namespace SimplePersistence.Model
     public abstract class EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity>
         : EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray<TIdentity, string, string>, IHaveCreatedMeta, IHaveUpdatedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray()
+        {
 
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithCreatedAndUpdatedMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+
+        }
     }
 
 #endif

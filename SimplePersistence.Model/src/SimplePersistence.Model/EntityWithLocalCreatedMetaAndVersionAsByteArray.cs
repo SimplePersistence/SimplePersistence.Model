@@ -71,6 +71,17 @@ namespace SimplePersistence.Model
         {
             _createdOn = DateTime.Now;
         }
+
+        /// <summary>
+        /// Creates a new instance and sets the <see cref="CreatedOn"/> 
+        /// to <see cref="DateTime.Now"/>
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithLocalCreatedMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+            _createdOn = DateTime.Now;
+        }
     }
 
     /// <summary>
@@ -82,6 +93,22 @@ namespace SimplePersistence.Model
     public abstract class EntityWithLocalCreatedMetaAndVersionAsByteArray<TIdentity>
         : EntityWithLocalCreatedMetaAndVersionAsByteArray<TIdentity, string>, IHaveLocalCreatedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithLocalCreatedMetaAndVersionAsByteArray()
+        {
+            
+        }
 
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id"></param>
+        protected EntityWithLocalCreatedMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+
+        }
     }
 }
