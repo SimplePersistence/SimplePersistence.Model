@@ -17,7 +17,11 @@
         /// <returns>The entity after changes</returns>
         /// <exception cref="ArgumentNullException">Thrown if any of the parameters are null</exception>
         /// <exception cref="ArgumentException">Thrown if the arrays length does not match</exception>
+#if NET20
+        public static TEntity ByteArrayVersion<TEntity>(TEntity entity, byte[] version)
+#else
         public static TEntity ByteArrayVersion<TEntity>(this TEntity entity, byte[] version)
+#endif
             where TEntity : IHaveVersion<byte[]>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
