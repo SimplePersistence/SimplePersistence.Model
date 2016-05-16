@@ -56,6 +56,24 @@ namespace SimplePersistence.Model
         public virtual byte[] Version { get; set; }
 
         #endregion
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithLocalDeletedMetaAndVersionAsByteArray()
+        {
+            
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithLocalDeletedMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+            
+        }
     }
 
     /// <summary>
@@ -67,6 +85,22 @@ namespace SimplePersistence.Model
     public abstract class EntityWithLocalDeletedMetaAndVersionAsByteArray<TIdentity>
         : EntityWithLocalDeletedMetaAndVersionAsByteArray<TIdentity, string>, IHaveLocalDeletedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithLocalDeletedMetaAndVersionAsByteArray()
+        {
 
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithLocalDeletedMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+
+        }
     }
 }

@@ -63,6 +63,16 @@ namespace SimplePersistence.Model
         {
             _updatedOn = DateTimeOffset.Now;
         }
+
+        /// <summary>
+        /// Creates a new instance and sets the <see cref="UpdatedOn"/> 
+        /// to <see cref="DateTimeOffset.Now"/>
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithUpdatedMeta(TIdentity id) : base(id)
+        {
+            _updatedOn = DateTimeOffset.Now;
+        }
     }
 
     /// <summary>
@@ -73,7 +83,20 @@ namespace SimplePersistence.Model
     public abstract class EntityWithUpdatedMeta<TIdentity>
         : EntityWithUpdatedMeta<TIdentity, string>, IHaveUpdatedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithUpdatedMeta()
+        {
+        }
 
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithUpdatedMeta(TIdentity id) : base(id)
+        {
+        }
     }
 
 #endif

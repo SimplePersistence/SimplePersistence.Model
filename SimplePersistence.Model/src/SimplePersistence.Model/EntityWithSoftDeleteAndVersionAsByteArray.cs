@@ -48,5 +48,20 @@ namespace SimplePersistence.Model
         public virtual byte[] Version { get; set; }
 
         #endregion
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithSoftDeleteAndVersionAsByteArray()
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithSoftDeleteAndVersionAsByteArray(TIdentity id) : base(id)
+        {
+        }
     }
 }

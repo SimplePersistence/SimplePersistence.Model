@@ -38,5 +38,20 @@ namespace SimplePersistence.Model
         public virtual bool Deleted { get; set; }
 
         #endregion
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithSoftDelete()
+        {
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithSoftDelete(TIdentity id) : base(id)
+        {
+        }
     }
 }

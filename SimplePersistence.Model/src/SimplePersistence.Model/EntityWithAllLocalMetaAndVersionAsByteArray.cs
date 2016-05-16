@@ -106,6 +106,17 @@ namespace SimplePersistence.Model
         {
             _createdOn = _updatedOn = DateTime.Now;
         }
+
+        /// <summary>
+        /// Creates a new instance and sets the <see cref="CreatedOn"/> and 
+        /// <see cref="UpdatedOn"/> to <see cref="DateTime.Now"/>
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithAllLocalMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+            _createdOn = _updatedOn = DateTime.Now;
+        }
     }
 
     /// <summary>
@@ -117,7 +128,23 @@ namespace SimplePersistence.Model
     public abstract class EntityWithAllLocalMetaAndVersionAsByteArray<TIdentity, TCreatedUpdatedAndDeleted>
         : EntityWithAllLocalMetaAndVersionAsByteArray<TIdentity, TCreatedUpdatedAndDeleted, TCreatedUpdatedAndDeleted, TCreatedUpdatedAndDeleted>
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithAllLocalMetaAndVersionAsByteArray()
+        {
+            
+        }
 
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithAllLocalMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+
+        }
     }
 
     /// <summary>
@@ -130,6 +157,22 @@ namespace SimplePersistence.Model
     public abstract class EntityWithAllLocalMetaAndVersionAsByteArray<TIdentity>
         : EntityWithAllLocalMetaAndVersionAsByteArray<TIdentity, string, string, string>, IHaveLocalCreatedMeta, IHaveLocalUpdatedMeta, IHaveLocalDeletedMeta
     {
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected EntityWithAllLocalMetaAndVersionAsByteArray()
+        {
 
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The entity id</param>
+        protected EntityWithAllLocalMetaAndVersionAsByteArray(TIdentity id)
+            : base(id)
+        {
+
+        }
     }
 }
