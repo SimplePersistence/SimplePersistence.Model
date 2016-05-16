@@ -24,7 +24,10 @@
 
 using System;
 using System.Reflection;
+
+#if NET20 || NET35 || NET40 || NET45
 using System.Runtime.InteropServices;
+#endif
 
 [assembly: AssemblyTitle("SimplePersistence.Model")]
 
@@ -36,7 +39,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-#if !(PORTABLE40 || PORTABLE)
+#if NET20 || NET35 || NET40 || NET45
 
 [assembly: ComVisible(false)]
 
@@ -46,5 +49,5 @@ using System.Runtime.InteropServices;
 
 [assembly: CLSCompliant(true)]
 
-[assembly: AssemblyVersion("3.1.0")]
-[assembly: AssemblyInformationalVersion("3.1.0")]
+[assembly: AssemblyVersion("3.2.0")]
+[assembly: AssemblyInformationalVersion("3.2.0")]
