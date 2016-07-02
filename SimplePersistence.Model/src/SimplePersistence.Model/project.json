@@ -1,23 +1,26 @@
 ﻿{
   "version": "3.2.1",
   "title": "SimplePersistence.Model",
-  "summary": "Library with helper interfaces and classes to provide consistency across application models.",
   "description": "Library with helper interfaces and classes to provide consistency across application models. Implementations are ORM compatible and should be usable in most databases.",
   "authors": [ "João Simões" ],
-  "tags": [ "database", "model", "persistence" ],
-  "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",
-  "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
-  "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
-  "language": "en-US",
   "copyright": "Copyright © 2016 SimplePersistence",
-  "releaseNotes": "Library is now strong signed",
-  "compilationOptions": {
+  "packOptions": {
+    "summary": "Library with helper interfaces and classes to provide consistency across application models.",
+    "tags": [ "database", "model", "persistence" ],
+    "projectUrl": "https://github.com/SimplePersistence/SimplePersistence.Model",
+    "licenseUrl": "https://raw.githubusercontent.com/SimplePersistence/SimplePersistence.Model/master/LICENSE",
+    "iconUrl": "https://avatars3.githubusercontent.com/u/17026510",
+    "releaseNotes": "Added support for .NET Standard"
+  },
+  "buildOptions": {
+    "xmlDoc": true,
+    "optimize": true,
     "keyFile": "SimplePersistence.snk"
   },
 
   "frameworks": {
     ".NETPortable,Version=v4.0,Profile=Profile328": {
-      "compilationOptions": {
+      "buildOptions": {
         "define": [ "PORTABLE40" ]
       },
       "frameworkAssemblies": {
@@ -26,23 +29,13 @@
         "System.Core": ""
       }
     },
-    "dnxcore5": {
+    "net20": {},
+    "net35": {},
+    "net40": {},
+    "net45": {},
+    "netstandard1.0": {
       "dependencies": {
-        "System.Runtime": "4.0.0"
-      }
-    },
-    "dotnet": {
-      "dependencies": {
-        "System.Runtime": "4.0.0"
-      }
-    },
-    "net20": { },
-    "net35": { },
-    "net40": { },
-    "net45": { },
-    "netcore45": {
-      "dependencies": {
-        "System.Runtime": "4.0.0"
+        "NETStandard.Library": "1.6.0"
       }
     }
   }
