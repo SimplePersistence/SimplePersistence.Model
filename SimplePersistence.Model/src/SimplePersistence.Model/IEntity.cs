@@ -29,6 +29,9 @@ namespace SimplePersistence.Model
     /// <typeparam name="TIdentity">The unique identifier type</typeparam>
     public interface IEntity<TIdentity> : IEntity
     {
+        /// <summary>
+        /// The entity unique identifier
+        /// </summary>
         TIdentity Id { get; set; }
     }
 

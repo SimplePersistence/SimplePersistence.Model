@@ -19,28 +19,6 @@
         "xunit.runner.dnx": "2.1.0-rc1-build204"
       }
     },
-    "dnxcore50": {
-      "dependencies": {
-        "System.Reflection": "4.0.0",
-        "xunit": "2.1.0",
-        "xunit.runner.dnx": "2.1.0-rc1-build204"
-      }
-    },
-    "net20": {
-      "dependencies": {
-        "NUnit": "3.0.1"
-      }
-    },
-    "net35": {
-      "dependencies": {
-        "NUnit": "3.0.1"
-      }
-    },
-    "net40": {
-      "dependencies": {
-        "NUnit": "3.0.1"
-      }
-    },
     "net45": {
       "dependencies": {
         "NUnit": "3.0.1"
@@ -49,8 +27,6 @@
   },
 
   "dependencies": {
-    "SimplePersistence.Model": {
-      "target": "project"
-    }
+    "SimplePersistence.Model": { "target": "project" }
   }
 }
